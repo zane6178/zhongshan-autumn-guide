@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="zh-CN">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#293e33"><meta name="description" content="11月14日从南京站出发，李记锅贴、燕雀湖及钟山四景省力赏秋攻略。"><title>钟山秋日手帖 · 11月14日</title><link rel="stylesheet" href="vendor/leaflet.css"><link rel="stylesheet" href="style.css"></head>
+<body>
+<header class="top"><a href="#" class="brand"><span class="seal">钟</span>山秋日手帖</a><span class="edition">NANJING · NOV 14</span><button id="share" class="textbtn">分享手册 ↗</button></header>
+<main>
+<div class="draft-notice">手机旅行手册 · 路线与开始时间自动记住 · 右上角可复制分享链接</div>
+<section class="hero"><img src="assets/stone-xhs.webp" alt="小红书游客拍摄的石象路秋色"><div class="shade"></div><div class="hero-copy"><div class="eyebrow">和朋友，把一天交给秋天</div><h1>钟山，<br>赴一场秋日之约。</h1><p>一份从锅贴香气开始的赏秋路线<br>湖光、石兽、小鹿与白鸽，按体力选路线。</p><div class="herotags"><span>11.14 周六</span><span>07:00 南京站</span><span>四景顺游</span></div></div><span class="photocredit">小红书 · 多米哆咪（养熊猫版） · 2025-11-21</span></section>
+<section class="intro"><p class="eyebrow green">YOUR AUTUMN FIELD GUIDE</p><h2>少走回头路，多留一点时间看风景。</h2><p>燕雀湖不必固定为第一站。按苜蓿园入口和景交车走向，这样串游更省步数；中山陵的登顶台阶单独选择。</p><div class="modebar" role="group" aria-label="选择游览强度"><button data-mode="easy" aria-pressed="true">省力四景 <small>山脚打卡</small></button><button data-mode="summit" aria-pressed="false">中山陵登顶 <small>多留1小时</small></button></div><div class="metrics" id="metrics"></div><p class="mode-note" id="mode-note"></p></section>
+<section id="route" class="section"><div class="section-title"><div><p class="eyebrow green">THE ROUTE</p><h2>在地图上，选一条顺路的走法</h2></div><span id="progress" class="pill"></span></div><div class="route-choice" role="group" aria-label="路线方案"><button data-route="main" aria-pressed="true">A · 四景主线<small>含燕雀湖＋鹿苑</small></button><button data-route="garden" aria-pressed="false">B · 北园替换美龄宫<small>保留中山陵＋音乐台 · 更费时</small></button><button data-route="west" aria-pressed="false">C · 西侧赏秋线<small>北园后结束 · 更省力</small></button></div>
+<article class="route-summary" id="route-summary" aria-live="polite"></article>
+<section class="timing-panel" id="timing" aria-label="行程时间与提前结束判断">
+<div class="time-start"><h3>先看时间，再决定走多远</h3><label>景区开始游玩 <input id="start-time" type="time" value="09:35" required aria-label="景区开始游玩时间"></label></div>
+<p class="fine">默认07:00南京站到达、李记早餐后，09:35到燕雀湖开始游玩。改这里仅调整景区时间；转场、午餐和离开时间分别列出。</p>
+<div id="time-summary" class="time-summary" aria-live="polite"></div><div id="timeline" class="timeline"></div>
+<p class="fine">以上已含表内候车、午餐、步行。周六另外预留30–60分钟机动；到地铁站不等于到南京站，返南京站另留约50–70分钟及进站缓冲。</p>
+<div class="time-judge"><h3>玩到一半，继续还是结束</h3><div class="judge-fields"><label>刚游完哪一站 <select id="last-stop" aria-label="刚游完哪一站"></select></label><label>判断时刻 <input id="judge-time" type="time" value="09:35" required aria-label="判断时刻"></label><button id="use-now" class="copybtn">用现在</button></div><p class="fine">按“刚游完”判断；若正在这一站，把判断时刻填成预计离开这一站的时间。支持手动演算，不读取定位。</p><div id="judge-result" aria-live="polite"></div></div>
+</section>
+<div class="map-heading"><span>北 ↑ · 可缩放、拖动；点击编号看走法</span><button id="reset-map" class="copybtn">看完整路线</button></div>
+<div id="route-map" class="route-map" aria-label="钟山风景区游玩顺序地图"></div>
+<div class="map-legend"><span><i class="legend-line"></i>步行段顺序</span><span><i class="legend-line bus"></i>车行接驳段</span><span><i class="legend-line garden"></i>北园分支</span><span>淡色圆圈＝大致拍摄区域</span></div>
+<p class="fine">底图道路和湖岸来自 OpenStreetMap（WGS84）。彩色箭头表示游玩顺序，非逐路口导航；未核实的鹿苑、北园入口与机位只标大致范围。详情内有逐段走法、原作者实拍导览及地图搜索入口，现场跟随导览牌。</p>
+<div id="route-stops" class="route-stops"></div>
+<details class="branch-explain"><summary>北园离哪里近？为什么适合替换，而不是最后加一站？</summary><p>北园在西侧，接近明孝陵1号门／中山植物园公交站。美龄宫在石象路东南侧，中山陵和音乐台更靠东。主线从5号门向东，北园分支从1号门向西北，离园前就要决定方向。</p><p>B线以北园替换美龄宫并略过梧桐大道专门停拍，仍需从西侧重新接往中山陵；含午餐及接驳预留，时间随开始时间联动，具体见上方时间表；无法保证更省腿。C线游完北园就在西侧结束，省去向东往返。</p><p>若坚持四景＋北园全部保留，需再加约1.5–2小时；不作为本次半天到多半天的默认方案。北园独立购票，不在钟山四景联票内。</p></details><label class="search"><span>⌕</span><input id="search" type="search" placeholder="搜机位：燕雀湖 / 枫叶 / 白鸽…" aria-label="搜索景点和拍照机位"><button id="clear-search" aria-label="清空搜索">清空</button></label><div id="cards" class="cards"></div><p id="empty" class="empty" hidden>没有找到这个机位。试试“红叶”“石象路”或“音乐台”。</p></section>
+<section id="travel" class="section"><div class="section-title"><div><p class="eyebrow green">GETTING THERE</p><h2>从出站到返程，每一段都算进去</h2></div></div><div class="travel-list" id="travel-list"></div><aside class="weather"><span>☁</span><div><b>出发前，看一眼天气</b><p id="weather"></p><a href="https://www.weather.com.cn/weather/101190101.shtml" target="_blank" rel="noopener">查看最新预报 ↗</a></div></aside></section>
+<section id="prepare" class="section"><div class="section-title"><div><p class="eyebrow green">BEFORE YOU GO</p><h2>票务、预算与随身清单</h2></div></div><div class="prep-grid"><div class="paper"><h3>门票怎么买</h3><ul id="tickets"></ul><button class="primary" id="official-copy">复制官方小程序名称</button><p class="fine">在微信搜索“钟山风景区”，核对官方运营主体后购票预约。本手帖不售票。</p></div><div class="paper"><h3>装进口袋的准备</h3><div id="checklist"></div><div class="note"><b>赏秋的两个主角</b><p>燕雀湖拍杉林倒影，石象路找红黄树色。湖畔“红杉”并非枫叶，历史全红照片不代表本周叶色。</p></div></div></div><details class="details"><summary>省力调整、雨天方案与照片说明</summary><ul id="notes"></ul></details></section>
+<section id="sources" class="section sources"><p class="eyebrow green">READ & VERIFY</p><h2>这些路线与机位，从哪里查到</h2><p>核查于2026年11月10日。官方票务与接驳优先；视频和游记用于找路线、机位。点开原文可继续查看实景。</p><div id="source-list"></div></section>
+<footer><span class="seal">钟</span><p>秋天会变化，路线可以从容一点。<br><small>个人旅行手帖 · 2026.11.14 · 照片版权归原作者</small></p><button class="textbtn" id="print">打印 / 存为 PDF</button></footer>
+</main>
+<nav class="bottom" aria-label="快捷导航"><a href="#route">路线机位</a><a href="#timing">时间判断</a><a href="#prepare">出发准备</a><a href="#sources">攻略来源</a></nav><div id="toast" role="status" aria-live="polite"></div><dialog id="spot-detail" aria-labelledby="detail-title"><div class="detail-top"><span>路线与拍照详情 · 测试版</span><button id="close-detail" aria-label="关闭地点详情">×</button></div><div id="detail-body"></div></dialog><dialog id="lightbox"><button id="close-photo" aria-label="关闭照片">×</button><img id="big-photo" alt=""><p id="big-caption"></p></dialog>
+<script src="trip-data.js"></script><script src="preview-data.js"></script><script src="vendor/leaflet.js"></script><script src="map-base.js"></script><script src="route-plan.js"></script><script src="guide-data.js"></script><script src="app.js"></script><script src="route-map.js"></script>
+</body></html>
